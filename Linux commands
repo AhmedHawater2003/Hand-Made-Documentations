@@ -1,0 +1,69 @@
+Linux Terminal Commands:
+----------------------------
+0) General Notes
+	I) for files and directories that include spaces in their names : use (\space) instead of (space)
+	II) use command_name --help to knwo more about a certain command
+	III) .. means the previous directory
+	IV) * means all the files || *.extention means all the files with this specific extention
+	V) man << manual >> commmand_name to get the manual for the command
+
+1) apt << advanced package tool >>
+	. apt install "package name"
+	. apt remove "package name"
+	. apt update	.apt upgrage
+	. apt --help ((for more commands like -cache search/ list --installed /etc))
+	
+2) files and directories flow 
+	. mkdir folder_name1 folder_name2 folder_name..
+	. cd "folder name" 
+	. touch "name.extention" <create new file>
+	. ls < show all files and directories in the current directory > { -a to show hidden ones also }
+	. tree < to show directories and files in tree format like the Files Explorer > 
+	. pwd << print working directory >> full path
+	. du << disk usage >> for any file/folder
+	. locate folder/file_name {-i to ignore case sensetivity} << update db every 24 hours and to update it manually use $ sudo updatedb >>
+	. file file_name < to show the type/state of the file >
+	. xdg-open file_name < to open file in the default editor >
+	
+	. rm {
+		I) multible files : file1 file2 file3 ..
+		II) all files with certain extention : *.extention
+		III) remove empty directiories : -d dir1 dir2 dir3 ..
+		VI) remove non-embty directories : -r dir1 dir2 dir3 ..
+	}
+	
+	. mv {
+		name1 name2  < (rename name1 to name2) if name2 does not exists else (move name1 to name2) or (overwrite name1 on name2 ::two files -> one file::) >
+		name1 name2 path < move name1 and name2 to path >
+	}
+	
+	. cp {
+		name1 name2  < (copy name1 to name2) or (overwrite name1 on name2 ::two files -> two files::) >
+		name1 name2 path < copy name1 and name2 to path >
+		to move folders with files inside : use -r 
+	}
+	
+
+		
+	
+3) Interacting with terminal it self 
+	. clear
+	. echo text >> file_name < add the text to the file and create new file if it's not already exists >
+	. cat file_name < used to display file content >
+	. sudo << SuperUser do >> < write it before any command to deal with files that need administration >
+	. grep << global regular expression print >> [option] some_text file_name {
+		To search in all files in the current directory and child ones : -r
+		List only file names that contain the text  : -l
+	}
+	. alias shortcut = full command < to make commands shortcuts >
+	. command_name | | xclip -sel clip << to copy the command output to the clipboard >>
+	. command > somewhere << to put the command output into the specified place instead of the terminal >>
+	
+4) System information
+	. hostname {
+		get the IP adress : -I
+	}
+	
+	
+
+

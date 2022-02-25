@@ -1,0 +1,85 @@
+Git Bash Commands:
+-------------------
+
+Accessing and setting basic info :
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	. git --version 
+	. git log < show commits log >
+	. git config --list < show git configuration >
+	. git conifg --global user.name (your_name when setting) < set and show global user name >
+	. git config --global user.email (your_mail when setting) < set and show global email >
+	. git config --global alias.your_alias_name "the commmand you are making the alias for" < normal alias idea >
+
+Getting repos and data from the website :
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	. git clone repo_link
+	
+
+
+Doing our stuff on our machine : 
+
+	. git init < intialize git repo in the current directory >
+	. git status < know which files/dirs git knows exists "without doing any thing" >
+	. git add "file/dir names" < add wanted files/dirs to the staging state >
+	. git rm "file/dir names" < delteing files/dirs + inform the staging state about that before commiting >
+	. git restore --staged "file/dir names" < remove unwanted files/dirs from the staging state >
+	. git restore "file/dir names" < restore deleted files/dirs and changes that happened in the breanch >
+	. git commit -m "your commit comment" < transfer all the files in the staging state to the Locar Repo (commitng state) >
+	. git clean  -n < delete all the files in the current branch 
+
+Creating repo and pushing :
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	. git branch (branch_name when creating) < view you branches and which one you are currently in (*) and create new branches > {
+		to safe delete the branch ( checking if there are any new changes before mergin to the main ) : -d
+		to force delete the branch : -D
+		to rename the current working branch : -m
+	}
+	. git checkout branch_name < set the speceified branch as the working branch >
+		to create a new branch befroe moving to it : -b
+	}
+	. git remote < show Remote Rebos (( which usually is the cloned rebo called "origin" )) > {
+		To show the full rebo link : -v
+	}
+	. git remote add remote_name created_repo_link < to link between the local repo and the specified remote repo >
+	. git push remote_name branch_name < push current commits to specified rebo and branch > { -u to pull before pushing }
+	. git pull remote_name < fitch new data from the current repo and merge it with you local repo >
+	
+Using the Stash :
+~~~~~~~~~~~~~~~~~
+	* stash indexing : stash@{index}  >> last created/added stash is 0 indexed *
+	** stashes are globaly accesable throught all the branches **
+	. git stash < hide all files in staging state of the working branch in the stach >
+	. git stash pop [index] < pop or show all the files in indexed stash ( 0 is the default ) to the current branch and delete the stash>
+	. git stash apply [index] < copy all the files in indexed stash ( 0 is the default ) to the current branch without deleting the stash >
+	. git stash drop [index] < delete the indexed stash and the files/directories inside it ( 0 is the default ) >
+	. git stash save "message" < assign a message to the stash you are creating >
+	. git stash show [index] < show what is inside the indexed stash ( 0 is the default ) >
+	. git stash list < list all the stashes that contain file or directories >
+	. git stash clear < delete ALL the stashes in the branch >
+	. git stash branch branch_name [index] < creating a new branch & add files/dirs in the indexed stash ( 0 is the default ) to the staging state of this 							branch & move you to this new branch as the current working branch & delete the indexed branch >
+	
+Deleting commits from commits log :
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	1) git reset --hard commit_hash < move the commits HEAD to the specefied commit and delete all the commits above the head >
+	2) git push main origin --force < update the commits log >
+	
+
+Ignoring files and directories using .gitignore :
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	1) we create .gitignore file
+	2) we type inside it all the files or directeories that we want to hide from the git status command << there are many patterns you can search about >>
+	3) using git add -f will make you able to add files/dirs to the staging state even if they are ignored
+	
+
+Git Compare:
+~~~~~~~~~~~~
+	
+	
+Tags :
+~~~~~~
+		--> you will need them when you are making mutlible version for your software, website, etc
+Releases :
+~~~~~~~~~~
+	
+	
