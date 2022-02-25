@@ -40,6 +40,7 @@ Creating repo and pushing :
 	}
 	. git remote < show Remote Rebos (( which usually is the cloned rebo called "origin" )) > {
 		To show the full rebo link : -v
+		to remove remote : remove remote_name
 	}
 	. git remote add remote_name created_repo_link < to link between the local repo and the specified remote repo >
 	. git push remote_name branch_name < push current commits to specified rebo and branch > { -u to pull before pushing }
