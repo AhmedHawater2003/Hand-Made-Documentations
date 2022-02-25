@@ -1,0 +1,12 @@
+Open download page : ctl + j
+Open bookmarks manger : ctl + b
+Open last closed tap : ctl + alt + t
+Jump to the search bar : ctl + l
+Clear browsing data : ctl + alt + delete
+Open new tap : ctl + t
+close current tap : ctl + w
+add current page to bookmarks : ctl + d
+Reload the bage : ctl + r
+Move between taps : ctl + tap
+Inspect : ctl + shift + c
+Stop page from reloading : esc
